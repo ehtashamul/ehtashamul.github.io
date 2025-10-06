@@ -1,21 +1,48 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Home from './pages/Home';
 import Research from './pages/Research';
 import ResearchExperiences from './pages/ResearchExperiences';
 import Teaching from './pages/Teaching';
 import Personal from './pages/Personal';
 
-type Page = 'home' | 'research' | 'experiences' | 'teaching' | 'personal';
+type Page = 'home' | 'researchStatement' | 'experiences' | 'teaching' | 'personal';
+
+
+function getPageFromHash(): Page {
+  const hash = window.location.hash.replace('#', '');
+  if (hash === 'researchStatement' || hash === 'experiences' || hash === 'teaching' || hash === 'personal') {
+    return hash as Page;
+  }
+  return 'home';
+}
 
 function App() {
-  const [currentPage, setCurrentPage] = useState<Page>('home');
+  const [currentPage, setCurrentPage] = useState<Page>(getPageFromHash());
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  // Update page when hash changes
+  useEffect(() => {
+    const onHashChange = () => {
+      setCurrentPage(getPageFromHash());
+    };
+    window.addEventListener('hashchange', onHashChange);
+    return () => window.removeEventListener('hashchange', onHashChange);
+  }, []);
+
+  // Update hash when page changes
+  useEffect(() => {
+    if (currentPage === 'home') {
+      window.location.hash = '';
+    } else {
+      window.location.hash = currentPage;
+    }
+  }, [currentPage]);
 
   const renderPage = () => {
     switch (currentPage) {
       case 'home':
-        return <Home goToResearch={() => setCurrentPage('research')} />;
-      case 'research':
+        return <Home goToResearch={() => setCurrentPage('researchStatement')} />;
+      case 'researchStatement':
         return <Research />;
       case 'experiences':
         return <ResearchExperiences goToHome={() => setCurrentPage('home')} />;
@@ -24,7 +51,7 @@ function App() {
       case 'personal':
         return <Personal />;
       default:
-        return <Home goToResearch={() => setCurrentPage('research')} />;
+        return <Home goToResearch={() => setCurrentPage('researchStatement')} />;
     }
   };
 
@@ -61,8 +88,8 @@ function App() {
               Home
             </button>
             <button
-              onClick={() => { setCurrentPage('research'); setMobileMenuOpen(false); }}
-              className={`text-left transition-colors ${currentPage === 'research' ? 'text-gray-900 font-bold' : 'text-gray-500 hover:text-gray-900'}`}
+              onClick={() => { setCurrentPage('researchStatement'); setMobileMenuOpen(false); }}
+              className={`text-left transition-colors ${currentPage === 'researchStatement' ? 'text-gray-900 font-bold' : 'text-gray-500 hover:text-gray-900'}`}
             >
               Research Statement
             </button>
@@ -96,9 +123,9 @@ function App() {
               Home
             </button>
             <button
-              onClick={() => setCurrentPage('research')}
+              onClick={() => setCurrentPage('researchStatement')}
               className={`transition-colors ${
-                currentPage === 'research' ? 'text-gray-900' : 'text-gray-500 hover:text-gray-900'
+                currentPage === 'researchStatement' ? 'text-gray-900' : 'text-gray-500 hover:text-gray-900'
               }`}
             >
               Research Statement
