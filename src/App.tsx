@@ -57,10 +57,16 @@ function App() {
     }
   };
 
+  // Dark mode toggle handler
+  const toggleDarkMode = () => {
+    const html = document.documentElement;
+    html.classList.toggle('dark');
+  };
+
   return (
-    <div className="min-h-screen bg-white">
-      <nav className="border-b border-gray-200">
-        <div className="max-w-5xl mx-auto px-6 py-4">
+    <div className="min-h-screen bg-white dark:bg-gray-900">
+      <nav className="border-b border-gray-200 dark:border-gray-700">
+        <div className="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
           {/* Hamburger button for mobile */}
           <div className="flex md:hidden items-center">
             <button
@@ -68,14 +74,23 @@ function App() {
               aria-label="Open navigation menu"
               onClick={() => setMobileMenuOpen(v => !v)}
             >
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <svg className="w-6 h-6 text-gray-900 dark:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
               </svg>
             </button>
           </div>
+
+          {/* Dark mode toggle button */}
+          <button
+            className="ml-4 px-3 py-1 rounded bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-100 hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors"
+            onClick={toggleDarkMode}
+            aria-label="Toggle dark mode"
+          >
+            🌓
+          </button>
           {/* Collapsible nav for mobile with flip animation */}
           <div
-            className={`flex flex-col gap-4 text-base py-2 pl-4 md:hidden bg-white border-b border-gray-200 absolute left-0 right-0 z-50 shadow-lg transition-transform transition-opacity duration-700 ease-[cubic-bezier(0.4,0,0.2,1)] origin-top`}
+            className={`flex flex-col gap-4 text-base py-2 pl-4 md:hidden bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700 absolute left-0 right-0 z-50 shadow-lg transition-transform transition-opacity duration-700 ease-[cubic-bezier(0.4,0,0.2,1)] origin-top`}
             style={{
               top: '64px',
               transform: mobileMenuOpen ? 'rotateX(0deg)' : 'rotateX(-90deg)',
@@ -85,31 +100,31 @@ function App() {
           >
             <button
               onClick={() => { setCurrentPage('home'); setMobileMenuOpen(false); window.history.replaceState(null, '', '/'); }}
-              className={`text-left transition-colors ${currentPage === 'home' ? 'text-gray-900 font-bold' : 'text-gray-500 hover:text-gray-900'}`}
+              className={`text-left transition-colors ${currentPage === 'home' ? 'text-gray-900 dark:text-white font-bold' : 'text-gray-500 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white'}`}
             >
               Home
             </button>
             <button
               onClick={() => { setCurrentPage('researchStatement'); setMobileMenuOpen(false); window.history.replaceState(null, '', '/researchStatement'); }}
-              className={`text-left transition-colors ${currentPage === 'researchStatement' ? 'text-gray-900 font-bold' : 'text-gray-500 hover:text-gray-900'}`}
+              className={`text-left transition-colors ${currentPage === 'researchStatement' ? 'text-gray-900 dark:text-white font-bold' : 'text-gray-500 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white'}`}
             >
               Research Statement
             </button>
             <button
               onClick={() => { setCurrentPage('experiences'); setMobileMenuOpen(false); window.history.replaceState(null, '', '/experiences'); }}
-              className={`text-left transition-colors ${currentPage === 'experiences' ? 'text-gray-900 font-bold' : 'text-gray-500 hover:text-gray-900'}`}
+              className={`text-left transition-colors ${currentPage === 'experiences' ? 'text-gray-900 dark:text-white font-bold' : 'text-gray-500 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white'}`}
             >
               Research Experiences
             </button>
             <button
               onClick={() => { setCurrentPage('teaching'); setMobileMenuOpen(false); window.history.replaceState(null, '', '/teaching'); }}
-              className={`text-left transition-colors ${currentPage === 'teaching' ? 'text-gray-900 font-bold' : 'text-gray-500 hover:text-gray-900'}`}
+              className={`text-left transition-colors ${currentPage === 'teaching' ? 'text-gray-900 dark:text-white font-bold' : 'text-gray-500 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white'}`}
             >
               Teaching
             </button>
             <button
               onClick={() => { setCurrentPage('personal'); setMobileMenuOpen(false); window.history.replaceState(null, '', '/personal'); }}
-              className={`text-left transition-colors ${currentPage === 'personal' ? 'text-gray-900 font-bold' : 'text-gray-500 hover:text-gray-900'}`}
+              className={`text-left transition-colors ${currentPage === 'personal' ? 'text-gray-900 dark:text-white font-bold' : 'text-gray-500 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white'}`}
             >
               Personal
             </button>
@@ -119,7 +134,7 @@ function App() {
             <button
               onClick={() => setCurrentPage('home')}
               className={`transition-colors ${
-                currentPage === 'home' ? 'text-gray-900' : 'text-gray-500 hover:text-gray-900'
+                currentPage === 'home' ? 'text-gray-900 dark:text-white' : 'text-gray-500 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white'
               }`}
             >
               Home
@@ -127,7 +142,7 @@ function App() {
             <button
               onClick={() => setCurrentPage('researchStatement')}
               className={`transition-colors ${
-                currentPage === 'researchStatement' ? 'text-gray-900' : 'text-gray-500 hover:text-gray-900'
+                currentPage === 'researchStatement' ? 'text-gray-900 dark:text-white' : 'text-gray-500 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white'
               }`}
             >
               Research Statement
@@ -135,7 +150,7 @@ function App() {
             <button
               onClick={() => setCurrentPage('experiences')}
               className={`transition-colors ${
-                currentPage === 'experiences' ? 'text-gray-900' : 'text-gray-500 hover:text-gray-900'
+                currentPage === 'experiences' ? 'text-gray-900 dark:text-white' : 'text-gray-500 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white'
               }`}
             >
               Research Experiences
@@ -143,7 +158,7 @@ function App() {
             <button
               onClick={() => setCurrentPage('teaching')}
               className={`transition-colors ${
-                currentPage === 'teaching' ? 'text-gray-900' : 'text-gray-500 hover:text-gray-900'
+                currentPage === 'teaching' ? 'text-gray-900 dark:text-white' : 'text-gray-500 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white'
               }`}
             >
               Teaching
@@ -151,7 +166,7 @@ function App() {
             <button
               onClick={() => setCurrentPage('personal')}
               className={`transition-colors ${
-                currentPage === 'personal' ? 'text-gray-900' : 'text-gray-500 hover:text-gray-900'
+                currentPage === 'personal' ? 'text-gray-900 dark:text-white' : 'text-gray-500 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white'
               }`}
             >
               Personal

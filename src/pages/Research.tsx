@@ -1,9 +1,9 @@
 export default function Research() {
   return (
     <div className="max-w-4xl mx-auto px-6 py-12">
-      <h1 className="text-3xl font-light mb-8 text-gray-900">Research Statement</h1>
+  <h1 className="text-3xl font-light mb-8 text-gray-900 dark:text-gray-100">Research Statement</h1>
 
-      <div className="prose prose-sm max-w-none text-gray-700 leading-relaxed space-y-6">
+  <div className="prose prose-sm max-w-none text-gray-700 dark:text-gray-200 leading-relaxed space-y-6">
         <p>
           As I embark on my PhD journey, I am driven by a deep curiosity to explore [your research area].
           My research interests center on [main research focus], with the ultimate goal of [your research vision].
