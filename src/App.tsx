@@ -19,6 +19,13 @@ function getPageFromPath(): Page {
 
 // Removed duplicate function App() declaration
 function App() {
+  // Set dark mode as default on initial load
+  useEffect(() => {
+    const html = document.documentElement;
+    if (!html.classList.contains('dark')) {
+      html.classList.add('dark');
+    }
+  }, []);
   const [currentPage, setCurrentPage] = useState<Page>(getPageFromPath());
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
