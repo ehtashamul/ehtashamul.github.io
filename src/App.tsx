@@ -8,34 +8,36 @@ import Personal from './pages/Personal';
 type Page = 'home' | 'researchStatement' | 'experiences' | 'teaching' | 'personal';
 
 
-function getPageFromHash(): Page {
-  const hash = window.location.hash.replace('#', '');
-  if (hash === 'researchStatement' || hash === 'experiences' || hash === 'teaching' || hash === 'personal') {
-    return hash as Page;
-  }
+function getPageFromPath(): Page {
+  const path = window.location.pathname.toLowerCase();
+  if (path.endsWith('/researchstatement')) return 'researchStatement';
+  if (path.endsWith('/experiences')) return 'experiences';
+  if (path.endsWith('/teaching')) return 'teaching';
+  if (path.endsWith('/personal')) return 'personal';
   return 'home';
 }
 
+// Removed duplicate function App() declaration
 function App() {
-  const [currentPage, setCurrentPage] = useState<Page>(getPageFromHash());
+  const [currentPage, setCurrentPage] = useState<Page>(getPageFromPath());
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   // Update page when hash changes
   useEffect(() => {
-    const onHashChange = () => {
-      setCurrentPage(getPageFromHash());
+    const onPopState = () => {
+      setCurrentPage(getPageFromPath());
     };
-    window.addEventListener('hashchange', onHashChange);
-    return () => window.removeEventListener('hashchange', onHashChange);
+    window.addEventListener('popstate', onPopState);
+    return () => window.removeEventListener('popstate', onPopState);
   }, []);
 
   // Update hash when page changes
   useEffect(() => {
-    if (currentPage === 'home') {
-      window.location.hash = '';
-    } else {
-      window.location.hash = currentPage;
+    let path = '/';
+    if (currentPage !== 'home') {
+      path += currentPage;
     }
+    window.history.replaceState(null, '', path);
   }, [currentPage]);
 
   const renderPage = () => {
@@ -82,31 +84,31 @@ function App() {
             }}
           >
             <button
-              onClick={() => { setCurrentPage('home'); setMobileMenuOpen(false); }}
+              onClick={() => { setCurrentPage('home'); setMobileMenuOpen(false); window.history.replaceState(null, '', '/'); }}
               className={`text-left transition-colors ${currentPage === 'home' ? 'text-gray-900 font-bold' : 'text-gray-500 hover:text-gray-900'}`}
             >
               Home
             </button>
             <button
-              onClick={() => { setCurrentPage('researchStatement'); setMobileMenuOpen(false); }}
+              onClick={() => { setCurrentPage('researchStatement'); setMobileMenuOpen(false); window.history.replaceState(null, '', '/researchStatement'); }}
               className={`text-left transition-colors ${currentPage === 'researchStatement' ? 'text-gray-900 font-bold' : 'text-gray-500 hover:text-gray-900'}`}
             >
               Research Statement
             </button>
             <button
-              onClick={() => { setCurrentPage('experiences'); setMobileMenuOpen(false); }}
+              onClick={() => { setCurrentPage('experiences'); setMobileMenuOpen(false); window.history.replaceState(null, '', '/experiences'); }}
               className={`text-left transition-colors ${currentPage === 'experiences' ? 'text-gray-900 font-bold' : 'text-gray-500 hover:text-gray-900'}`}
             >
               Research Experiences
             </button>
             <button
-              onClick={() => { setCurrentPage('teaching'); setMobileMenuOpen(false); }}
+              onClick={() => { setCurrentPage('teaching'); setMobileMenuOpen(false); window.history.replaceState(null, '', '/teaching'); }}
               className={`text-left transition-colors ${currentPage === 'teaching' ? 'text-gray-900 font-bold' : 'text-gray-500 hover:text-gray-900'}`}
             >
               Teaching
             </button>
             <button
-              onClick={() => { setCurrentPage('personal'); setMobileMenuOpen(false); }}
+              onClick={() => { setCurrentPage('personal'); setMobileMenuOpen(false); window.history.replaceState(null, '', '/personal'); }}
               className={`text-left transition-colors ${currentPage === 'personal' ? 'text-gray-900 font-bold' : 'text-gray-500 hover:text-gray-900'}`}
             >
               Personal
