@@ -8,12 +8,14 @@ import Personal from './pages/Personal';
 type Page = 'home' | 'researchStatement' | 'experiences' | 'teaching' | 'personal';
 
 
-function getPageFromPath(): Page {
-  const path = window.location.pathname.toLowerCase();
-  if (path.endsWith('/researchstatement')) return 'researchStatement';
-  if (path.endsWith('/experiences')) return 'experiences';
-  if (path.endsWith('/teaching')) return 'teaching';
-  if (path.endsWith('/personal')) return 'personal';
+// Use the URL hash for routing so direct page loads work on static hosts (GitHub Pages).
+function getPageFromHash(): Page {
+  // Accept hashes like "#", "#/", "#/personal" or "#personal"
+  const raw = window.location.hash.replace(/^#\/?/, '').toLowerCase();
+  if (raw === 'researchstatement') return 'researchStatement';
+  if (raw === 'experiences') return 'experiences';
+  if (raw === 'teaching') return 'teaching';
+  if (raw === 'personal') return 'personal';
   return 'home';
 }
 
@@ -26,25 +28,26 @@ function App() {
       html.classList.add('dark');
     }
   }, []);
-  const [currentPage, setCurrentPage] = useState<Page>(getPageFromPath());
+  const [currentPage, setCurrentPage] = useState<Page>(getPageFromHash());
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  // Update page when hash changes
+  // Update page when the hash changes (user presses back/forward or opens a link with #/...)
   useEffect(() => {
-    const onPopState = () => {
-      setCurrentPage(getPageFromPath());
+    const onHashChange = () => {
+      setCurrentPage(getPageFromHash());
     };
-    window.addEventListener('popstate', onPopState);
-    return () => window.removeEventListener('popstate', onPopState);
+    window.addEventListener('hashchange', onHashChange);
+    return () => window.removeEventListener('hashchange', onHashChange);
   }, []);
 
-  // Update hash when page changes
+  // Update the URL hash when page changes. We use hashes like "#/researchStatement".
   useEffect(() => {
     let path = '/';
     if (currentPage !== 'home') {
-      path += currentPage;
+      path = '/' + currentPage;
     }
-    window.history.replaceState(null, '', path);
+    // This will result in URLs like `/#/personal` — safe on static hosts.
+    window.location.hash = path;
   }, [currentPage]);
 
   const renderPage = () => {
@@ -106,31 +109,31 @@ function App() {
             }}
           >
             <button
-              onClick={() => { setCurrentPage('home'); setMobileMenuOpen(false); window.history.replaceState(null, '', '/'); }}
+              onClick={() => { setCurrentPage('home'); setMobileMenuOpen(false); window.location.hash = '/'; }}
               className={`text-left transition-colors ${currentPage === 'home' ? 'text-gray-900 dark:text-white font-bold' : 'text-gray-500 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white'}`}
             >
               Home
             </button>
             <button
-              onClick={() => { setCurrentPage('researchStatement'); setMobileMenuOpen(false); window.history.replaceState(null, '', '/researchStatement'); }}
+              onClick={() => { setCurrentPage('researchStatement'); setMobileMenuOpen(false); window.location.hash = '/researchStatement'; }}
               className={`text-left transition-colors ${currentPage === 'researchStatement' ? 'text-gray-900 dark:text-white font-bold' : 'text-gray-500 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white'}`}
             >
               Research Statement
             </button>
             <button
-              onClick={() => { setCurrentPage('experiences'); setMobileMenuOpen(false); window.history.replaceState(null, '', '/experiences'); }}
+              onClick={() => { setCurrentPage('experiences'); setMobileMenuOpen(false); window.location.hash = '/experiences'; }}
               className={`text-left transition-colors ${currentPage === 'experiences' ? 'text-gray-900 dark:text-white font-bold' : 'text-gray-500 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white'}`}
             >
               Research Experiences
             </button>
             <button
-              onClick={() => { setCurrentPage('teaching'); setMobileMenuOpen(false); window.history.replaceState(null, '', '/teaching'); }}
+              onClick={() => { setCurrentPage('teaching'); setMobileMenuOpen(false); window.location.hash = '/teaching'; }}
               className={`text-left transition-colors ${currentPage === 'teaching' ? 'text-gray-900 dark:text-white font-bold' : 'text-gray-500 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white'}`}
             >
               Teaching
             </button>
             <button
-              onClick={() => { setCurrentPage('personal'); setMobileMenuOpen(false); window.history.replaceState(null, '', '/personal'); }}
+              onClick={() => { setCurrentPage('personal'); setMobileMenuOpen(false); window.location.hash = '/personal'; }}
               className={`text-left transition-colors ${currentPage === 'personal' ? 'text-gray-900 dark:text-white font-bold' : 'text-gray-500 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white'}`}
             >
               Personal
