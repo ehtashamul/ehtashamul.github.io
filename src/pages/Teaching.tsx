@@ -154,6 +154,18 @@ export default function Teaching() {
         </section>
 
         <section>
+          <h2 className="text-xl font-bold mb-6 text-gray-900 dark:text-gray-100 border-b border-gray-200 pb-2">Talks and seminars delivered</h2>
+          <ul className="list-disc pl-5 space-y-1 dark:text-gray-100">
+                <li>
+                  <div className="flex flex-col md:flex-row md:justify-between items-start">
+                    <p className="font-normal text-gray-900 dark:text-gray-100 text-sm md:mb-0 mb-1">Gave a talk on reinforcement learning in a Bangladesh AI Olympiad training camp.</p>
+                    <span className="text-sm text-gray-500 dark:text-gray-400 md:ml-4">25 October, 2025</span>
+                  </div>
+                </li>
+          </ul>
+        </section>
+
+        <section>
           <h2 className="text-xl font-bold mb-6 text-gray-900 dark:text-gray-100 border-b border-gray-200 pb-2">
             Teaching Materials I Developed
           </h2>

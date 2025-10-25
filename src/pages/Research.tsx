@@ -1,44 +1,21 @@
 export default function Research() {
   return (
-    <div className="max-w-4xl mx-auto px-6 py-12">
-  <h1 className="text-3xl font-light mb-8 text-gray-900 dark:text-gray-100">Research Statement</h1>
+  <div className="max-w-4xl mx-auto px-6 py-12">
+    <h1 className="text-3xl font-light mb-8 text-gray-900 dark:text-gray-100">Research Statement</h1>
 
-  <div className="prose prose-sm max-w-none text-gray-700 dark:text-gray-200 leading-relaxed space-y-6">
-        <p>
-          As I embark on my PhD journey, I am driven by a deep curiosity to explore [your research area].
-          My research interests center on [main research focus], with the ultimate goal of [your research vision].
-        </p>
+    <div className="prose prose-sm max-w-none text-gray-700 dark:text-gray-200 leading-relaxed space-y-6">
+      <p><b>Motivation:</b>  Every time we peer into the human brain, whether through signals (e.g., EEG), images (e.g., MRI, CT), texts (e.g., cognitive assessments), or omics (e.g., gene) data, we are confronted with a paradox: a vast amount of information, yet persistent complications in making sense of it. Neurological diseases seem deceptively simple on paper, but brain imaging often leaves us more perplexed than enlightened. With AI models promising high disease detection accuracy on complex brain data, it may feel like we are progressing towards understanding the root causes of these diseases, which in reality, we are not. High predictive performance does not necessarily translate to insight into the underlying mechanisms of the disease. But can we somehow utilize this predictive power for scientific understanding? It is precisely within this question that I have found my research passion. I am motivated by a simple idea- <i>if AI models predict by finding patterns in data, and if they are actually getting &gt;90% on brain disease classification, there should be a way to reverse engineer the models to figure out the relevant physiological patterns.</i>. In fact, if we can do so, it would not only allow us to understand human brain better, but also would advance medical science in a transformative way.</p>
 
-        <p>
-          Throughout my academic journey, I have been fascinated by [what fascinates you about your field].
-          This fascination has led me to pursue research that addresses [problem you want to solve],
-          particularly in the context of [specific application or domain].
-        </p>
+      <p><b>Background:</b> My research and education career so far equips me with unique skills suitbale to explore my research questions. I have completed my Bachelors in electrical and electronic engineering where I had an extensive exposure to signals and images, including biomedical signals and images. Although my research topic during my undergrad was not focused in biomedical engineering, it involved applications of supervised learning in similar fields. My interest towards biomedical signal and image processing grew mostly after my graduataion when I started collaborating in multiple research projects. Given the complexity of EEG signals, I was immediately drawn to works in this field. In fact, I am currently collaborating with healthcare professionals and domain experts on a depression project where we are trying to find some form of biomarkers through EEG readings. As the project is nearing its closing, I believe the knowledge I gathered throughout the project is what has truly shaped up my future ambitions. </p>
 
-        <p>
-          My previous work has provided me with a solid foundation in [methods/techniques you've worked with].
-          Moving forward, I aim to develop [what you want to develop/discover] that can [impact or contribution].
-          I believe that by [your approach], we can make significant advances in understanding [phenomenon or problem].
-        </p>
+      <p><b>Research Experience:</b> Although currently I am focusing on AI in neuroimformatics, I have explored other related fields over the years. For example during my undergrad, I worked with time series analysis mostly, with one or two works focusing on computer vision. After my graduation, my primary research shifted to computer vision as I joined as a researcher in a non-profit organization founded by my classmate, RAIA. At RAIA, we collaborate with Bangladesh Agriculture Research Institute (BARI) to integrate computer vision based AI models in the domain of agriculture. At RAIA, we had buffer times between data collection and training models as the collected data had to be annotated by the experts at BARI. During this phase, I started working again with time series data. But this time, I started moving to biomedical signal data due to their inherent complexity. This is primarily what introduced me to the field. Later, I joined Dr. Mohammad Ali Moni's lab as an research assisstant and my focus was on building interpretable major depressive disorder classifier. Given the complexity of the data involved, I had to collaborate with healthcare professionals and learn EEG properly, which did delay the project but helped me learn a lot about the domain. It is during this time, I also contributed to a project on quantum time series classifier mainly with theoretical derivations which was later published at KDD'25.</p>
 
-        <p>
-          I am particularly interested in exploring [specific research questions or directions]. These questions are
-          not only theoretically compelling but also have practical implications for [real-world applications].
-          My goal is to bridge the gap between [theory and practice / different fields / etc.].
-        </p>
+      <p><b>Future Directions:</b> Going forward, I plan on sticking to interpretable neuroimformatics. I hope to one day create foundational models with intrinsic explainability that not only performs well for a specific dataset but also provides relevant information of the dataset that advances the domain as a whole. I also believe that knowledge is expanded through exploration and I do plan to explore theoretical AI in similar domains. </p>
 
-        <p>
-          In pursuing my PhD, I hope to contribute to [field/community] by [your intended contribution].
-          I am excited about the opportunity to work with leading researchers in [your field], learn from their
-          expertise, and collaborate on pushing the boundaries of what we know about [your research area].
-        </p>
+      {/* <p><b>Background:</b> With the advent of AI, a lot of work has been put into developing different frameworks to improve the predective prowess of the methods by training it on existing data without domain awareness. However, these models are often uninterpretable and do not provide any reasoning behind their predictions. Thus, they were termed as "black-box" models. The trend of blindly improving predictive performance continued until eXplainable AI (XAI) became a thing. With frameworks like LIME and SHAP providing insights into black-box models, the outlook of AI research started to change. Researchers started using AI models to better understand data and the underlying phenomena, well beyond what was humanly percievable before. With new horizons opening up, scientists eventually started building domain specific models with intrinsic interpretability. One such model was used in determining protein folding (AlphaFold) for which the creators received a Nobel prize.</p> */}
 
-        <p>
-          Beyond my specific research interests, I am committed to fostering a collaborative and inclusive research
-          environment. I believe that diverse perspectives are essential for innovation, and I look forward to
-          contributing to a vibrant academic community.
-        </p>
-      </div>
+      
     </div>
+  </div>
   );
 }
