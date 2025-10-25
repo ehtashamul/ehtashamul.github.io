@@ -154,12 +154,19 @@ export default function Teaching() {
         </section>
 
         <section>
-          <h2 className="text-xl font-bold mb-6 text-gray-900 dark:text-gray-100 border-b border-gray-200 pb-2">Talks and seminars delivered</h2>
+          <h2 className="text-xl font-bold mb-6 text-gray-900 dark:text-gray-100 border-b border-gray-200 pb-2">Special lectures, talks and seminars delivered</h2>
           <ul className="list-disc pl-5 space-y-1 dark:text-gray-100">
                 <li>
-                  <div className="flex flex-col md:flex-row md:justify-between items-start">
-                    <p className="font-normal text-gray-900 dark:text-gray-100 text-sm md:mb-0 mb-1">Gave a talk on reinforcement learning in a Bangladesh AI Olympiad training camp.</p>
-                    <span className="text-sm text-gray-500 dark:text-gray-400 md:ml-4">25 October, 2025</span>
+                  <div className="relative md:pr-24">
+                    <div className="md:flex md:items-start">
+                      <div className="md:flex-1">
+                        <h3 className="font-semibold text-gray-900 dark:text-gray-100 mb-1">Introduction to Reinforcement Learning</h3>
+                        {/* Date: appears under title on mobile, pinned to far right on md+ */}
+                        <span className="text-sm text-gray-500 dark:text-gray-400 block mt-1 md:absolute md:right-0 md:top-0 md:mt-0">25 October 2025</span>
+                        <i className="text-sm text-gray-600 dark:text-gray-300 mb-1 block">International AI Olympiad 2026 Preparation and Selection Camp for Bangladesh team</i>
+                        <p className="text-sm text-gray-700 dark:text-gray-200 mt-1 mb-0">Resources: <a href="https://docs.google.com/presentation/d/1ZCTmD8jfz61eXp0DU3PxWV_iWjYOqUbR/edit?usp=sharing&ouid=100533104834515282932&rtpof=true&sd=true" className="text-blue-700 dark:text-blue-300 underline">Slides</a><span className="mx-2 text-gray-400 dark:text-gray-500">|</span><a href="https://colab.research.google.com/drive/16cvxdCIZyOCDxlMqyOKCWZSyY8m4vqXF?usp=sharing" className="text-blue-700 dark:text-blue-300 underline">Bandit notebook</a><span className="mx-2 text-gray-400 dark:text-gray-500">|</span><a href="https://colab.research.google.com/drive/1tIS5F47alp14pWofiAY1FYWktq5TEjF4?usp=sharing" className="text-blue-700 dark:text-blue-300 underline">Grid world notebook</a></p>
+                      </div>
+                    </div>
                   </div>
                 </li>
           </ul>

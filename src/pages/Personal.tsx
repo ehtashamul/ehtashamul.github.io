@@ -6,7 +6,7 @@ export default function Personal() {
       <div className="space-y-12">
         <section>
           <h2 className="text-xl font-bold mb-6 text-gray-900 dark:text-gray-100 border-b border-gray-200 pb-2">
-            Meet Charlie
+            Remembering Charlie
           </h2>
           <div className="flex flex-col md:flex-row-reverse md:items-start gap-6 mb-6">
             <div className="bg-gray-200 rounded overflow-hidden md:w-64 w-full flex items-center justify-center">
@@ -18,7 +18,10 @@ export default function Personal() {
             </div>
             <div className="prose prose-sm max-w-none text-gray-700 dark:text-gray-200 leading-relaxed flex-1">
               <p className="mb-4">
-                I am a big cat person and I share my home with this wonderful feline friend. Her name is Charlie. She is a rescue cat and she has been with me for around 3 years now. She doesn't really pose for photos and this is probably the best one I have of her. Unfortunately she has spinal deformity and has a weird gait, but she is otherwise perfectly healthy and happy.
+                I am a big cat person and I have shared my home with this wonderful feline friend. Her name was Charlie. She was a rescue cat and she had been with me for around 3 years. She never really posed for photos and this is probably the best one I have of her. Unfortunately she had spinal deformity which reduced her life expectancy. She has left me on 9th October, 2025 and I miss her dearly.
+              </p>
+              <p className="mb-4">
+                <i>Rest in power, Charlie.</i> You were the best companion I could have asked for.
               </p>
             </div>
           </div>

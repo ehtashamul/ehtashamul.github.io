@@ -88,8 +88,8 @@ export default function Home({ goToResearch }: { goToResearch?: () => void }) {
 
           <div className="border-l-2 border-gray-300 pl-4">
             <p className="text-sm text-gray-400 dark:text-gray-400 mb-1">25 October 2025</p>
-            <p className="text-gray-700 dark:text-gray-200">
-              Gave a talk on reinforcement learning during a training session of Bangladesh AI olympiad team. You can find the slides and notebooks (embedded in the slides) <a href='https://docs.google.com/presentation/d/1ZCTmD8jfz61eXp0DU3PxWV_iWjYOqUbR/edit?usp=sharing&ouid=100533104834515282932&rtpof=true&sd=true'>here</a>.
+              <p className="text-gray-700 dark:text-gray-200">
+              Gave a special lecture on reinforcement learning at the International AI Olympiad 2026 Preparation and Selection Camp for Bangladesh team.
             </p>
           </div>
 
