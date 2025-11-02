@@ -142,12 +142,6 @@ export default function Teaching() {
                     <span className="text-sm text-gray-500 dark:text-gray-400 md:ml-4">Fall '25</span>
                   </div>
                 </li>
-                <li>
-                  <div className="flex flex-col md:flex-row md:justify-between items-start">
-                    <p className="font-normal text-gray-900 dark:text-gray-100 text-sm md:mb-0 mb-1">Digital Signal Processing Lab (CSE430L)</p>
-                    <span className="text-sm text-gray-500 dark:text-gray-400 md:ml-4">Fall '25</span>
-                  </div>
-                </li>
               </ul>
             </div>
           </div>
@@ -204,12 +198,6 @@ export default function Teaching() {
                 <li>
                   <div className="flex justify-between items-start">
                     <p className="font-normal text-gray-900 dark:text-gray-100 text-sm"><u><a href="https://drive.google.com/drive/folders/1Jyqo51g1FnAA3OWZNxXl6A7AVaJFC4g7?usp=drive_link" className="text-blue-700 dark:text-blue-300 underline">Digital Signal Processing (CSE430) Notes</a></u> <i className="dark:text-gray-300">[Work in progress]</i></p>
-                  </div>
-                </li>
-
-                <li>
-                  <div className="flex justify-between items-start">
-                    <p className="font-normal text-gray-900 dark:text-gray-100 text-sm"><u><a href="https://drive.google.com/drive/folders/1xhiIruH247BzquLQqqNtGIbXgp2mZvZO?usp=sharing" className="text-blue-700 dark:text-blue-300 underline">Digital Signal Processing Lab (CSE430L) Notebooks</a></u> <i className="dark:text-gray-300">[Work in progress]</i> <i className="dark:text-gray-300">[I am not directly developing the notebooks]</i> </p>
                   </div>
                 </li>
 
