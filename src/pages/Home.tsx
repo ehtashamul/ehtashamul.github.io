@@ -76,7 +76,7 @@ export default function Home({ goToResearch }: { goToResearch?: () => void }) {
             </p>
 
             <p>
-              <b>I am applying to PhD programs for Fall 2026 admission in the areas of neuroimformatics and/or theoretical machine learning. If you are looking for a dedicated and passionate researcher to join your lab, please feel free to reach out. You can find my Research Statement <button type="button" className="underline hover:underline text-blue-700 dark:text-blue-300" style={{background:'none',border:'none',padding:0,cursor:'pointer'}} onClick={goToResearch}>here</button></b>
+              <b>I am applying to PhD programs for Fall 2026 admission in the areas of interpretable neuroinformatics and/or theoretical machine learning. If you are looking for a dedicated and passionate researcher to join your lab, please feel free to reach out. You can find my Research Statement <button type="button" className="underline hover:underline text-blue-700 dark:text-blue-300" style={{background:'none',border:'none',padding:0,cursor:'pointer'}} onClick={goToResearch}>here</button></b>
             </p>
           </div>
         </div>
