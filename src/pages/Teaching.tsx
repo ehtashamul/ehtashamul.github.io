@@ -22,7 +22,7 @@ export default function Teaching() {
             <div>
               <div className="flex flex-col md:flex-row md:justify-between items-start mb-0">
                 <h3 className="font-semibold text-gray-900 dark:text-gray-100 md:mb-0 mb-1">Adjunct lecturer</h3>
-                <span className="text-sm text-gray-500 dark:text-gray-400 md:ml-4">Nov 2023 - May 2024</span>
+                <span className="text-sm text-gray-500 dark:text-gray-400 md:ml-4">Sep 2023 - May 2024</span>
               </div>
               <i className="text-sm text-gray-600 dark:text-gray-300 mb-2">Department of Computer Science and Engineering, BRAC University</i>
             </div>
