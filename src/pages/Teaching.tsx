@@ -67,7 +67,13 @@ export default function Teaching() {
                 <li>
                   <div className="flex flex-col md:flex-row md:justify-between items-start">
                     <p className="font-normal text-gray-900 dark:text-gray-100 text-sm md:mb-0 mb-1">Digital Signal Processing (CSE430)</p>
-                    <span className="text-sm text-gray-500 dark:text-gray-400 md:ml-4">Fall '25</span>
+                    <span className="text-sm text-gray-500 dark:text-gray-400 md:ml-4">Fall '25, Spring '26</span>
+                  </div>
+                </li>
+                <li>
+                  <div className="flex flex-col md:flex-row md:justify-between items-start">
+                    <p className="font-normal text-gray-900 dark:text-gray-100 text-sm md:mb-0 mb-1">Image Processing (CSE428)</p>
+                    <span className="text-sm text-gray-500 dark:text-gray-400 md:ml-4"> Spring '26</span>
                   </div>
                 </li>
               </ul>
@@ -97,7 +103,7 @@ export default function Teaching() {
                 <li>
                   <div className="flex flex-col md:flex-row md:justify-between items-start">
                     <p className="font-normal text-gray-900 dark:text-gray-100 text-sm md:mb-0 mb-1">Image Processing Lab (CSE428L)</p>
-                    <span className="text-sm text-gray-500 dark:text-gray-400 md:ml-4">Spring '25, Summer '25, Fall '25</span>
+                    <span className="text-sm text-gray-500 dark:text-gray-400 md:ml-4">Spring '25, Summer '25, Fall '25, Spring '26</span>
                   </div>
                 </li>
                 <li>
@@ -109,7 +115,7 @@ export default function Teaching() {
                 <li>
                   <div className="flex flex-col md:flex-row md:justify-between items-start">
                     <p className="font-normal text-gray-900 dark:text-gray-100 text-sm md:mb-0 mb-1">Digital Signal Processing Lab (CSE430L)</p>
-                    <span className="text-sm text-gray-500 dark:text-gray-400 md:ml-4">Fall '25</span>
+                    <span className="text-sm text-gray-500 dark:text-gray-400 md:ml-4">Fall '25, Spring '26</span>
                   </div>
                 </li>
               </ul>
@@ -127,7 +133,7 @@ export default function Teaching() {
                 <li>
                   <div className="flex flex-col md:flex-row md:justify-between items-start">
                     <p className="font-normal text-gray-900 dark:text-gray-100 text-sm md:mb-0 mb-1">Image Processing Lab (CSE428L)</p>
-                    <span className="text-sm text-gray-500 dark:text-gray-400 md:ml-4">Spring '25, Summer '25, Fall '25</span>
+                    <span className="text-sm text-gray-500 dark:text-gray-400 md:ml-4">Spring '25, Summer '25, Fall '25, Spring '26</span>
                   </div>
                 </li>
                 <li>
@@ -139,7 +145,13 @@ export default function Teaching() {
                 <li>
                   <div className="flex flex-col md:flex-row md:justify-between items-start">
                     <p className="font-normal text-gray-900 dark:text-gray-100 text-sm md:mb-0 mb-1">Digital Signal Processing (CSE430)</p>
-                    <span className="text-sm text-gray-500 dark:text-gray-400 md:ml-4">Fall '25</span>
+                    <span className="text-sm text-gray-500 dark:text-gray-400 md:ml-4">Fall '25, Spring '26</span>
+                  </div>
+                </li>
+                <li>
+                  <div className="flex flex-col md:flex-row md:justify-between items-start">
+                    <p className="font-normal text-gray-900 dark:text-gray-100 text-sm md:mb-0 mb-1">Digital Signal Processing Lab (CSE430L)</p>
+                    <span className="text-sm text-gray-500 dark:text-gray-400 md:ml-4">Spring '26</span>
                   </div>
                 </li>
               </ul>
@@ -185,7 +197,14 @@ export default function Teaching() {
                 
                 <li>
                   <div className="flex justify-between items-start">
-                    <p className="font-normal text-gray-900 dark:text-gray-100 text-sm"><u className="font-normal text-gray-900 dark:text-gray-100 text-sm"><a href="https://drive.google.com/drive/u/2/folders/1iWfAMHLW0Bwx4Kj1r353okstefTSuHQS" className="text-blue-700 dark:text-blue-300 underline">Optimization Lab (CSE402) Notebooks</a></u> <i className="dark:text-gray-300">[Work in progress]</i></p>
+                    <p className="font-normal text-gray-900 dark:text-gray-100 text-sm"><u className="font-normal text-gray-900 dark:text-gray-100 text-sm"><a href="https://drive.google.com/drive/u/2/folders/1iWfAMHLW0Bwx4Kj1r353okstefTSuHQS" className="text-blue-700 dark:text-blue-300 underline">Optimization Lab (CSE402) Notebooks</a></u></p>
+                  </div>
+                </li>
+
+
+                 <li>
+                  <div className="flex justify-between items-start">
+                    <p className="font-normal text-gray-900 dark:text-gray-100 text-sm"><u><a href="https://drive.google.com/drive/folders/1r7u5WOX4lr-tMOqgFXqoe3WU0Rmvi8_w?usp=sharing" className="text-blue-700 dark:text-blue-300 underline">Image Processing (CSE428) Slides</a></u> <i className="dark:text-gray-300">[Work in progress]</i></p>
                   </div>
                 </li>
 
@@ -197,7 +216,13 @@ export default function Teaching() {
 
                 <li>
                   <div className="flex justify-between items-start">
-                    <p className="font-normal text-gray-900 dark:text-gray-100 text-sm"><u><a href="https://drive.google.com/drive/folders/1Jyqo51g1FnAA3OWZNxXl6A7AVaJFC4g7?usp=drive_link" className="text-blue-700 dark:text-blue-300 underline">Digital Signal Processing (CSE430) Notes</a></u> <i className="dark:text-gray-300">[Work in progress]</i></p>
+                    <p className="font-normal text-gray-900 dark:text-gray-100 text-sm"><u><a href="https://drive.google.com/drive/folders/1Jyqo51g1FnAA3OWZNxXl6A7AVaJFC4g7?usp=drive_link" className="text-blue-700 dark:text-blue-300 underline">Digital Signal Processing (CSE430) Notes</a></u> </p>
+                  </div>
+                </li>
+
+                <li>
+                  <div className="flex justify-between items-start">
+                    <p className="font-normal text-gray-900 dark:text-gray-100 text-sm"><u><a href="https://drive.google.com/drive/folders/1rAxJkOsjvjLOMIZwhwlR0_4B_lLLZRSM?usp=sharing" className="text-blue-700 dark:text-blue-300 underline">Digital Signal Processing Lab (CSE430L) Notebooks</a></u> <i className="dark:text-gray-300">[Work in progress]</i></p>
                   </div>
                 </li>
 
