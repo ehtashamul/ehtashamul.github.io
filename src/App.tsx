@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import Home from './pages/Home';
-import Research from './pages/Research';
+// Research page kept in the repo but hidden from navigation
 import ResearchExperiences from './pages/ResearchExperiences';
 import Teaching from './pages/Teaching';
 import Personal from './pages/Personal';
@@ -12,7 +12,7 @@ type Page = 'home' | 'researchStatement' | 'experiences' | 'teaching' | 'persona
 function getPageFromHash(): Page {
   // Accept hashes like "#", "#/", "#/personal" or "#personal"
   const raw = window.location.hash.replace(/^#\/?/, '').toLowerCase();
-  if (raw === 'researchstatement') return 'researchStatement';
+  if (raw === 'researchstatement') return 'home';
   if (raw === 'experiences') return 'experiences';
   if (raw === 'teaching') return 'teaching';
   if (raw === 'personal') return 'personal';
@@ -53,9 +53,10 @@ function App() {
   const renderPage = () => {
     switch (currentPage) {
       case 'home':
-        return <Home goToResearch={() => setCurrentPage('researchStatement')} />;
+        return <Home />;
       case 'researchStatement':
-        return <Research />;
+        // Research page is hidden; fall back to home
+        return <Home />;
       case 'experiences':
         return <ResearchExperiences goToHome={() => setCurrentPage('home')} />;
       case 'teaching':
@@ -63,7 +64,7 @@ function App() {
       case 'personal':
         return <Personal />;
       default:
-        return <Home goToResearch={() => setCurrentPage('researchStatement')} />;
+        return <Home />;
     }
   };
 
@@ -115,12 +116,6 @@ function App() {
               Home
             </button>
             <button
-              onClick={() => { setCurrentPage('researchStatement'); setMobileMenuOpen(false); window.location.hash = '/researchStatement'; }}
-              className={`text-left transition-colors ${currentPage === 'researchStatement' ? 'text-gray-900 dark:text-white font-bold' : 'text-gray-500 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white'}`}
-            >
-              Research Statement
-            </button>
-            <button
               onClick={() => { setCurrentPage('experiences'); setMobileMenuOpen(false); window.location.hash = '/experiences'; }}
               className={`text-left transition-colors ${currentPage === 'experiences' ? 'text-gray-900 dark:text-white font-bold' : 'text-gray-500 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white'}`}
             >
@@ -149,14 +144,7 @@ function App() {
             >
               Home
             </button>
-            <button
-              onClick={() => setCurrentPage('researchStatement')}
-              className={`transition-colors ${
-                currentPage === 'researchStatement' ? 'text-gray-900 dark:text-white' : 'text-gray-500 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white'
-              }`}
-            >
-              Research Statement
-            </button>
+            {/* Research Statement navigation hidden on purpose */}
             <button
               onClick={() => setCurrentPage('experiences')}
               className={`transition-colors ${

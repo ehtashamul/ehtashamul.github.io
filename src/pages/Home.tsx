@@ -1,6 +1,8 @@
 import { Mail } from 'lucide-react';
+import lastUpdated from '../generated/lastUpdated';
 
 export default function Home({ goToResearch }: { goToResearch?: () => void }) {
+
   return (
     <div className="max-w-5xl mx-auto px-6 py-12">
       <div className="grid md:grid-cols-[300px,1fr] gap-12 mb-16">
@@ -75,8 +77,12 @@ export default function Home({ goToResearch }: { goToResearch?: () => void }) {
               I received my BSc in EEE from Islamic University of Technology (IUT), Dhaka, Bangladesh in 2022. While I did receive some preliminary training in machine learning during my undergraduate studies, my main exposure to the field and the also the domain specific knowledge of neuroimformatics and theoretical machine learning came afterwards through independent research and self-study.
             </p>
 
-            <p>
+            {/* <p className="mb-4">
               <b>I am applying to PhD programs for Fall 2026 admission in the areas of biomedical and neural signal processing. If you are looking for a dedicated and passionate researcher to join your lab, please feel free to reach out. You can find my Research Statement <button type="button" className="underline hover:underline text-blue-700 dark:text-blue-300" style={{background:'none',border:'none',padding:0,cursor:'pointer'}} onClick={goToResearch}>here</button></b>
+            </p> */}
+          
+            <p className="text-sm text-gray-500 dark:text-gray-400" style={{ opacity: 0.75 }}>
+              <i>Updated last on {lastUpdated}</i>
             </p>
           </div>
         </div>

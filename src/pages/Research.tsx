@@ -1,7 +1,7 @@
 export default function Research() {
   return (
   <div className="max-w-4xl mx-auto px-6 py-12">
-    <h1 className="text-3xl font-light mb-8 text-gray-900 dark:text-gray-100">Research Statement</h1>
+      <h1 className="text-3xl font-bold mb-8 text-gray-900 dark:text-gray-100">Research Statement</h1>
 
     <div className="prose prose-sm max-w-none text-gray-700 dark:text-gray-200 leading-relaxed space-y-6">
 
