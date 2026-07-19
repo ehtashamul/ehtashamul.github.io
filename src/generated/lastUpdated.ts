@@ -1,2 +1,2 @@
-const lastUpdated = "March 11, 2026";
+const lastUpdated = "May 30, 2026";
 export default lastUpdated;

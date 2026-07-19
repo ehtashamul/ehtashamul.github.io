@@ -3,7 +3,7 @@ export default function ResearchExperiences({ goToHome }: { goToHome?: () => voi
     <div className="max-w-4xl mx-auto px-6 py-12">
   <h1 className="text-3xl font-bold mb-8 text-gray-900 dark:text-gray-100">Research Experiences</h1>
 
-  <p className="mb-8 text-gray-700 dark:text-gray-200">For a proper list of my publications, please visit my <u><a href = "https://scholar.google.com/citations?user=Pr21S0QAAAAJ&hl" className="text-blue-700 dark:text-blue-300 underline">Google Scholar</a></u>. If you need the pdfs to any of the paper, feel free to send me an email. You can find my emails in the <span className="underline hover:underline cursor-pointer text-blue-700 dark:text-blue-300" onClick={goToHome}>Home page</span>.</p>
+  <p className="mb-8 text-gray-700 dark:text-gray-200">For details of my publications along with citation counts, please visit my <u><a href = "https://scholar.google.com/citations?user=Pr21S0QAAAAJ&hl" className="text-blue-700 dark:text-blue-300 underline">Google Scholar</a></u>. If you need the pdfs to any of the paper, feel free to send me an email. You can find my emails in the <span className="underline hover:underline cursor-pointer text-blue-700 dark:text-blue-300" onClick={goToHome}>Home</span> page.</p>
 
       <section className="mb-12">
   <h1 className="text-2xl font-bold mb-6 text-gray-900 dark:text-gray-100 border-b border-gray-200 pb-2">
@@ -12,24 +12,24 @@ export default function ResearchExperiences({ goToHome }: { goToHome?: () => voi
         <div className="space-y-8">
           <div>
             <div className="flex flex-col md:flex-row md:justify-between items-start mb-2">
-              <h2 className="font-bold text-gray-900 dark:text-gray-100 text-lg md:mb-0 mb-1">1. Explainable EEG biomarkers for Major Depressive Disorder (MDD) </h2>
-              <span className="text-sm text-gray-400 dark:text-gray-400 md:ml-4">2024 - Present</span>
+              <h2 className="font-bold text-gray-900 dark:text-gray-100 text-lg md:mb-0 mb-1">1. Mimicking human learning in the domain of neurological disorders on EEG data </h2>
+              <span className="text-sm text-gray-400 dark:text-gray-400 md:ml-4">2026 - Present</span>
             </div>
             <div className="pl-4">
-              <b className="text-sm text-gray-600 dark:text-gray-300 mb-2 block">Supervisor - <u><a href = 'https://about.uq.edu.au/experts/32270' className="text-blue-700 dark:text-blue-300 underline">Dr Mohammad Ali Moni </a></u></b>
+              <b className="text-sm text-gray-600 dark:text-gray-300 mb-2 block">Supervisor - <u><a href = 'https://cse.sds.bracu.ac.bd/faculty_profile/164/dr_md_ashraful_alam' className="text-blue-700 dark:text-blue-300 underline">Dr. Md. Ashraful Alam </a></u>, <u><a href = 'https://about.uq.edu.au/experts/32270' className="text-blue-700 dark:text-blue-300 underline">Dr Mohammad Ali Moni </a></u></b>
               <p className="text-gray-700 dark:text-gray-200 text-sm leading-relaxed">
-                 The project started with a simple question - if a classification model trained to distinguish between MDD and healthy controls can obtain &gt;95% accuracy, can we not use the model to identify the important markers in the data? In literature almost all models report very high accuracy when it comes to demarcating between an EEG reading coming from an MDD patient and a healthy control. However, almost no work has gone into the depth of the markers these models are learning. Why? Its because it is hard to regulate the training and formulate a proper experimental setup that stops the model from overfitting on noise. In this project, we are developing an interpretable model that resists overfitting [1]. If this research is successful, it would enhance our understanding of MDD, and hopefully, provide useful biomarkers that can be used for real. Our initial results are promising and suggest that some interpretability is indeed achievable.
+                 The project began from the philosophy of mimicking how humans read EEG data. Personally, when I learned EEG, I learned it through a contrastive approach, where I would compare EEG data from healthy and unhealthy individuals to understand the differences. Additionally, I would also take the help of signal spectrums to distinguish between two different cases. Based on this, I have prepared three different models - time model, topological plot models (contains a mix of frequency spectrum and time representation) and coherence matrix (focuses on frequency spectrum and connectivity across electrodes). After training through contrastive learning, when ensembled gives superior performance compared to individual models and also outperforms the state-of-the-art methods in the domain.
               </p>
-              <b className="text-sm text-gray-600 dark:text-gray-300 mb-2 block mt-2">Papers</b>
+              {/* <b className="text-sm text-gray-600 dark:text-gray-300 mb-2 block mt-2">Papers</b>
               <ol type="1" className="list-decimal list-inside mt-2">
                 <li className="text-sm text-gray-600 dark:text-gray-300 mb-2"><u>Haque E</u>, Orka NA, Jannat M, Moni MA. <b>Generalized EEG representation learning captures deviations linked to major depressive disorder.</b><i> In Preparation.</i></li>
-              </ol>
+              </ol> */}
             </div>
           </div>
 
-          <div>
+          {/* <div>
             <div className="flex flex-col md:flex-row md:justify-between items-start mb-2">
-              <h2 className="font-bold text-gray-900 dark:text-gray-100 text-lg md:mb-0 mb-1">2. Developing Efficienct Quantum Convolutional Networks</h2>
+              <h2 className="font-bold text-gray-900 dark:text-gray-100 text-lg md:mb-0 mb-1">2. Developing Efficient Quantum Convolutional Networks</h2>
               <span className="text-sm text-gray-400 dark:text-gray-400 md:ml-4">2024 - Present</span>
             </div>
             <div className="pl-4">
@@ -44,11 +44,11 @@ export default function ResearchExperiences({ goToHome }: { goToHome?: () => voi
                 <li className="text-sm text-gray-600 dark:text-gray-300 mb-2">Orka NA, <u>Haque E</u>, Awal MA, Moni MA. <b>Fully quanvolutional networks for time series classification</b>. <i>ACM SIGKDD Conference on Knowledge Discovery and Data Mining.</i> 2025. <b>[CORE A*]</b> <u><a href = "https://dl.acm.org/doi/abs/10.1145/3711896.3736972" className="text-blue-700 dark:text-blue-300 underline">Link to paper.</a></u> </li>
               </ol>
             </div>
-          </div>
+          </div> */}
 
           <div>
             <div className="flex flex-col md:flex-row md:justify-between items-start mb-2">
-              <h2 className="font-bold text-gray-900 dark:text-gray-100 text-lg md:mb-0 mb-1">3. Development of Foundational Agricultural AI Models </h2>
+              <h2 className="font-bold text-gray-900 dark:text-gray-100 text-lg md:mb-0 mb-1">2. Development of Foundational Agricultural AI Models </h2>
               <span className="text-sm text-gray-400 dark:text-gray-400 md:ml-4">2022 - Present</span>
             </div>
             <div className="pl-4">
@@ -68,10 +68,12 @@ export default function ResearchExperiences({ goToHome }: { goToHome?: () => voi
 
       <section>
   <h2 className="text-xl font-bold mb-6 text-gray-900 dark:text-gray-100 border-b border-gray-200 pb-2">
-          Other Published Research
+          Published Research
         </h2>
         <div className="space-y-8">
           <ol type="1" className="list-decimal pl-6 space-y-4 text-sm text-gray-600 dark:text-gray-300 mb-2">
+            <li className="text-sm text-gray-600 dark:text-gray-300 mb-2">Orka NA, <u>Haque E</u>, Awal MA, Moni MA. <b>Fully quanvolutional networks for time series classification</b>. <i>ACM SIGKDD Conference on Knowledge Discovery and Data Mining.</i> 2025. <b>[CORE A*]</b> <u><a href = "https://dl.acm.org/doi/abs/10.1145/3711896.3736972" className="text-blue-700 dark:text-blue-300 underline">Link to paper.</a></u> </li>
+            <li className="text-sm text-gray-600 dark:text-gray-300 mb-2">Orka NA, <u>Haque E</u>, Uddin MN and Ahamed T. <b>Nutrispace: A novel color space to enhance deep learning based early detection of cucurbits nutritional deficiency.</b> <i>Computers and Electronics in Agriculture</i>  2024. <b>[IF: 7.7]</b> <u><a href = "https://www.sciencedirect.com/science/article/abs/pii/S0168169924006872?via%3Dihub" className="text-blue-700 dark:text-blue-300 underline">Link to paper.</a></u></li>
             <li>
               Rahman MR, <u>Haque E</u>, Rahman ST, Kabir HK and Ahmed YA. <b>Modelling of an efficient system for predicting ships' estimated time of arrival using artificial neural network</b>. <i>In Computational Intelligence: Select Proceedings of InCITe 2022</i>. 2023. <i>[Undergrad thesis topic]</i> <u><a href="https://link.springer.com/chapter/10.1007/978-981-19-7346-8_18" className="text-blue-700 dark:text-blue-300 underline">Link to paper.</a></u>
             </li>

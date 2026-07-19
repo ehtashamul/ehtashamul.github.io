@@ -71,7 +71,7 @@ export default function Home({ goToResearch }: { goToResearch?: () => void }) {
               Hi! Welcome to my personal website. I am a researcher and an educator based in Dhaka, Bangladesh. I am currently serving as a lecturer in the Computer Science and Engineering department at BRAC University.
             </p>
             <p className="mb-4">
-              My research interests lie at the intersection of explainable neuroimformatics and theoretical machine learning. While I have mainly worked with EEG data, I aim to expand my research to other neuroimformatic modalities. I am driven by the goal of advancing healthcare with the help of interpretable machine learning.
+              My research interests lie at the intersection of explainable neuroinformatics and brain-inspired machine learning. While my primary experience is with EEG data, I aim to expand my research to other neuroinformatic modalities. I am driven by the goal of advancing our understanding of the brain through both interpretable machine learning and brain-inspired modeling.
             </p>
             <p className="mb-4">
               I received my BSc in EEE from Islamic University of Technology (IUT), Dhaka, Bangladesh in 2022. While I did receive some preliminary training in machine learning during my undergraduate studies, my main exposure to the field and the also the domain specific knowledge of neuroimformatics and theoretical machine learning came afterwards through independent research and self-study.
